@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        .todo-container {
+            width: 400px;
+        }
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .todo-list li {
+            padding: 12px 15px 12px 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+        }
+        .todo-list li.uneven { background-color: #add8e6; }
+        .todo-list li.even { background-color: #b8e4f3; }
+        .todo-list li::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        .todo-list li.checked .task-text {
+            text-decoration: line-through;
+            color: #555;
+        }
+        .todo-list li.checked {
+            background-color: #ffffff;
+            text-decoration: none;
+            }
+        .todo-list li.checked::before {
+            content: '✓';
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+        }
+        .close {
+            color: #f00;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>My To Do List</h2>
+        <ul class="todo-list">
+            <li class="uneven"><span class="task-text">Hit the gym</span><span class="close">×</span></li>
+            <li class="checked even"><span class="task-text">Pay bills</span><span class="close">×</span></li>
+            <li class="uneven"><span class="task-text">Meet John</span><span class="close">×</span></li>
+            <li class="even"><span class="task-text">Buy eggs</span><span class="close">×</span></li>
+            <li class="checked uneven"><span class="task-text">Read a book</span><span class="close">×</span></li>
+            <li class="even"><span class="task-text">Organize Office</span><span class="close">×</span></li>
+            <li class="uneven"><span class="task-text">Eat Dinner</span><span class="close">×</span></li>
+            <li class="even"><span class="task-text">Buy Apples</span><span class="close">×</span></li>
+            <li class="uneven"><span class="task-text">Meet George</span><span class="close">×</span></li>
+            <li class="even"><span class="task-text">Feed the cat</span><span class="close">×</span></li>
+            <li class="checked uneven"><span class="task-text">Write a letter</span><span class="close">×</span></li>
+            <li class="even"><span class="task-text">Run 1 km</span><span class="close">×</span></li>
+        </ul>
+    </div>
+</body>
+</html>
